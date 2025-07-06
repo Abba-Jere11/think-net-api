@@ -68,7 +68,7 @@ export class AnnouncementController {
       const { id } = req.params
 
       const announcement = await db.announcement.findUnique({
-        where: { id: Number(id) },
+        where: { id: (id) },
       })
 
       if (!announcement) {
@@ -116,7 +116,7 @@ export class AnnouncementController {
       const data: UpdateAnnouncementRequest = req.body
 
       const announcement = await db.announcement.update({
-        where: { id: Number(id) },
+        where: { id: (id) },
         data: {
           ...(data.title && { title: data.title }),
           ...(data.content && { content: data.content }),
@@ -144,7 +144,7 @@ export class AnnouncementController {
       const { id } = req.params
 
       await db.announcement.delete({
-        where: { id: Number(id) },
+        where: { id: (id) },
       })
 
       res.json({ message: "Announcement deleted successfully" })
@@ -160,7 +160,7 @@ export class AnnouncementController {
       const { id } = req.params
 
       const announcement = await db.announcement.update({
-        where: { id: Number(id) },
+        where: { id: (id) },
         data: {
           views: {
             increment: 1,
