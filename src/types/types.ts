@@ -141,3 +141,25 @@ export type ManagementProps = {
   isActive?: boolean      // Optional - has default value (true)
   lastLogin?: Date
 }
+
+export type StaffCreateProps ={
+  id: string;
+  userId: string;
+  firstname: string;
+  lastname: string;
+  email: string;
+  phone?: string;
+  dob: Date;
+  gender: string;
+  address?: string;
+  department: string;
+  nin?: string;
+  religion?: string;
+  password: string;
+  imageUrl?: string;
+  startingDate?: Date;
+  description?: string;
+  stateOfOrigin?: string;
+  lga?: string;
+  status: string;
+}
